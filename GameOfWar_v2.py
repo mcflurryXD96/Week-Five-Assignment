@@ -39,12 +39,38 @@ def main():
 	while len(PlayerAHand) > 0 and len(PlayerBHand) > 0:
 		gameCounter += 1
 		PlayerAHand, PlayerBHand = playRound(PlayerAHand, PlayerBHand)
+		if gameCounter > 1000:
+			print("Game is a draw")
+			break
 	
 	# End of game
 	
 	print("There were ", gameCounter, " rounds played")
+	print("Player A has " + str(len(PlayerAHand)) + " cards, Player B has " + str(len(PlayerBHand)) + " cards")
 	
 def playRound(PlayerA, PlayerB):
+	
+	Acard = PlayerA.pop()
+	Bcard = PlayerB.pop()
+	
+	rankA = getRank(Acard)
+	rankB = getRank(Bcard)
+	
+	if rankA > rankB:
+	
+		#A wins the round
+		PlayerA.insert(0,Acard)
+	elif rankB > rankA:
+		
+		#B wins the round
+		PlayerB.insert(0,Bcard)
+		
+	else:
+		PlayerA, PlayerB = WAR(PlayerA, PlayerB)
+		
+		
+	return PlayerA, PlayerB
+	
 	
 	'''
 	This is the method that plays one round of War
