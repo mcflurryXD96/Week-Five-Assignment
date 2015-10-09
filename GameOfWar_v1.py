@@ -1,21 +1,11 @@
-#!/usr/bin/env python
-# encoding: utf-8
-"""
-GameOfWar.py
-
-Created by Neumann, Daniel on 2015-10-06.
-Copyright (c) 2015 __MyCompanyName__. All rights reserved.
-
-This is the shell copy. Fill this out to get it to work
-
-"""
+# Daniel McMurray
+# GameOfWar_v1.py
+# Game of War Version 1
+# Created in collaboration with Marisa Gross, Evan Sauers, and Jacob Wright
 
 import random	
 
 def main():
-	"""
-	Deck, PlayerAHand and PlayerBHand are all lists
-	"""
 	
 	Deck = []
 	PlayerAHand = []
@@ -45,8 +35,8 @@ def main():
 	
 	# End of game
 	
-	print("There were ", gameCounter, " rounds played")
-	print("Player A has " + str(len(PlayerAHand)) + " cards, Player B has " + str(len(PlayerBHand)) + " cards")
+	print("There were", gameCounter, "rounds played.")
+	print("Player A has " + str(len(PlayerAHand)) + " cards, Player B has " + str(len(PlayerBHand)) + " cards.")
 	
 def playRound(PlayerA, PlayerB):
 	
@@ -73,21 +63,6 @@ def playRound(PlayerA, PlayerB):
 		
 	return PlayerA, PlayerB
 	
-	
-	'''
-	This is the method that plays one round of War
-	The method takes PlayerA and PlayerB as input parameters
-	and returns PlayerA and PlayerB after modification
-	for the round
-	
-	Remember, high card wins. I have included a convenience
-	function getRank(anyCard) that will return the rank.
-	
-	See the README.md for the variations of
-	the game to program.
-	'''
-	return PlayerA, PlayerB
-
 
 def WAR(PlayerA, PlayerB):
 	# See the README.md file for instructions on coding 
